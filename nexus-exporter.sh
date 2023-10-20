@@ -332,7 +332,7 @@ generate_vrepo() {
 							# handle now artifactId
 							artifact_id=${artstr##*/};
 							# handle groupId
-							groupstr=${artstr/\/${artifact_id}/};
+							groupstr=${artstr%\/${artifact_id}*};
 							if [[ ${groupstr} != ${artifact_id} ]]; then
 								group_id=${groupstr//\//\.};
 							fi
